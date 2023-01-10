@@ -19,11 +19,11 @@ pipeline {
                 retry(3)
             }
             steps {
-                {
-                    sh '''
-                    echo "123"
-                    '''
-                }
+
+                sh '''
+                echo "123"
+                '''
+
             }
         }
     }
