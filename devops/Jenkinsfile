@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    environment {
+        DEV_ONLINE_USER = "ones-api"
+        DEV_ONLINE_HOST = '47.113.82.15'
+        DEV_ONLINE_SSH_PORT = 22
+        DEV_ONLINE_CMS_PATH = "/data/app/ones-cn-cms"
+    }
+    parameters {
+
+    }
+    options {
+        timeout(time: 20, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+    stages {
+        stage('Prepare build') {
+            options {
+                retry(3)
+            }
+            steps {
+                {
+                    sh '''
+                    echo "123"
+                    '''
+                }
+            }
+        }
+    }
+}
